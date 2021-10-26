@@ -19,6 +19,23 @@ $ npm run generate
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
 
+
+
+
+## Information
+
+Simple app to search Tweets
+
+Available functionality :
+
+1) Search tweets by given search string
+
+
+We created custom Twitter Tweet Component that gets [ID, Title, Author[Name, Image source]] and prints tweet card
+
+Also used SSR(Server side rendering) to get tweets , because Twitter do not allow use their API via Browser requests
+
+
 ## Special Directories
 
 You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
@@ -67,17 +84,3 @@ More information about the usage of this directory in [the documentation](https:
 This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
-
-
-### `Information`
-
-Simple app to search Tweets
-
-Available functionality :
-
-1) Search tweets by given search string
-
-
-We created custom Twitter Tweet Component that gets [ID, Title, Author[Name, Image source]] and prints tweet card
-
-Also used SSR(Server side rendering) to get tweets , because Twitter do not allow use their API via Browser requests
