@@ -2,7 +2,7 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-  ssr: false,
+  ssr: true,
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -35,20 +35,50 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/i18n'
   ],
 
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: 'https://api.twitter.com/2/',
+    headers: {
+      common: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer AAAAAAAAAAAAAAAAAAAAAEB5VAEAAAAAjEUWN1Wvqets2cuyxxTk%2FTVZfeM%3DfAmkE93I5hcTsK13sJ10C8XViSne2aifaL0ZoqOzxXw0BfdakA'
+      },
+    }
+  },
+
+  i18n: {
+    strategy: 'no_prefix',
+    locales: ['en', 'fr'],
+    defaultLocale: 'en',
+    vueI18n: {
+      fallbackLocale: 'en',
+      messages: {
+        en: {
+          welcome: 'Welcome',
+          tweetsSearch: 'Search for tweets...',
+          SearchResultsFor: 'Search Results For',
+          NoTweets: 'No Tweets'
+        },
+        fr: {
+          welcome: 'Bienvenue',
+          tweetsSearch: 'Rechercher des tweets...',
+          SearchResultsFor: 'Résultats de recherche pour',
+          NoTweets: 'Pas de tweets'
+        },
+      }
+    }
+  },
+
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
